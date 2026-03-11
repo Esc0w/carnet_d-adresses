@@ -1,0 +1,23 @@
+# Carnet d'adresses
+contacts = []
+#groupes = ["Famille", "Ami", "Travail"]
+
+contact_infos = {
+    "id": 1, 
+    "Nom": "", 
+    "Prénom": "", 
+    "Téléphone": "", 
+    "@mail perso.": "", 
+    "@mail pro.": "", 
+    "Adresse": "", 
+    "Code postal": "", 
+    "Ville": "", 
+    "Pays": "", 
+    "Anniversaire": "", 
+    "Groupe": "", 
+}
+contacts.append(contact_infos)
+
+
+
+print(contacts)
