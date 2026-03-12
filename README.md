@@ -10,14 +10,14 @@ Débuté après avoir fini la première partie (P1) du cours gratuit de OpenClas
 J'ai décidé de créer un carnet d'adresses pour m'entraîner à manipuler les listes et les dictionnaires en Python.
 Ce projet me permet également de me familiariser avec les boucles et les conditions, ainsi que de pratiquer la gestion des entrées utilisateur.
 
-V1 prévue à la fin de la P2 du cours sur les fonctions.
+V2 prévue à la fin de la P2 du cours sur les fonctions.
 
 Cours gratuit suivi : (Apprenez les bases du langage Python) https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python
 
 # EN
 
-# V0
+# V1
 Code sans découpage "fonction()"
 
-# V1
+# V2
 Code découper en "fonction()"
