@@ -6,3 +6,9 @@
 # FR
 Un carnet d'adresses simple qui permet d'afficher, ajouter, modifier et supprimer des contacts.
 Mise en pratique de ce que j'apprends actuellement.
+
+# V0
+Code sans découpage "fonction()"
+
+# V1
+Code découper en "fonction()"
