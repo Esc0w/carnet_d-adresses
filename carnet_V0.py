@@ -9,16 +9,61 @@ contacts = []
 while True:
     print("Bienvenue dans votre carnet d'adresses !")
     print("1. Afficher les contacts")
-    print("2. Ajouter un contact")
-    print("3. Modifier un contact")
-    print("4. Supprimer un contact")
-    print("5. Quitter le programme")
+    print("2. Rechercher un contact")
+    print("3. Ajouter un contact")
+    print("4. Modifier un contact")
+    print("5. Supprimer un contact")
+    print("6. Quitter le programme")
     choix = input("Votre choix : ")
     if choix == "1":
-        # Afficher les contacts
+        # Afficher les contacts:
+        trouve = False
         for contact in contacts:
+            trouve = True
             print(contact["Nom"], contact["Prénom"])
+        if not trouve:
+            print("Aucun contact trouvé.")
+        # Afficher les détails d'un contact:
+        else:
+            contact_details = input("Quel contact souhaitez-vous afficher ? (Nom, Prénom) : ")
+            for contact in contacts:
+                if contact["Nom"] == contact_details.split(",")[0].strip() and contact["Prénom"] == contact_details.split(",")[1].strip():
+                    print("Nom :", contact["Nom"])
+                    print("Prénom :", contact["Prénom"])
+                    print("Téléphone perso. :", contact["Téléphone perso."])
+                    print("Téléphone pro. :", contact["Téléphone pro."])
+                    print("@mail perso. :", contact["@mail perso."])
+                    print("@mail pro. :", contact["@mail pro."])
+                    print("Adresse :", contact["Adresse"])
+                    print("Code postal :", contact["Code postal"])
+                    print("Ville :", contact["Ville"])
+                    print("Pays :", contact["Pays"])
+                    print("Anniversaire :", contact["Anniversaire"])
+                    print("Groupe :", contact["Groupe"])
     elif choix == "2":
+        # Rechercher un contact:
+        print("Rechercher un contact:")
+        nom = input("Nom : ")
+        prenom = input("Prénom : ")
+        trouve = False
+        for contact in contacts:
+            if contact["Nom"] == nom and contact["Prénom"] == prenom:
+                trouve = True
+                print("Nom :", contact["Nom"])
+                print("Prénom :", contact["Prénom"])
+                print("Téléphone perso. :", contact["Téléphone perso."])
+                print("Téléphone pro. :", contact["Téléphone pro."])
+                print("@mail perso. :", contact["@mail perso."])
+                print("@mail pro. :", contact["@mail pro."])
+                print("Adresse :", contact["Adresse"])
+                print("Code postal :", contact["Code postal"])
+                print("Ville :", contact["Ville"])
+                print("Pays :", contact["Pays"])
+                print("Anniversaire :", contact["Anniversaire"])
+                print("Groupe :", contact["Groupe"])
+        if not trouve:
+            print("Contact non trouvé !")
+    elif choix == "3":
         # Ajouter un contact:
         print("Ajouter un contact:")
         nom = input("Nom : ")
@@ -49,7 +94,7 @@ while True:
             "Groupe": groupe,
         }
         contacts.append(contact_infos)
-    elif choix == "3":
+    elif choix == "4":
         # Modifier un contact:
         print("Modifier un contact:")
         nom = input("Nom du contact à modifier : ")
@@ -129,7 +174,7 @@ while True:
                     print("Modification annulée !")
         if not trouve:
             print("Contact non trouvé !")
-    elif choix == "4":
+    elif choix == "5":
         # Supprimer un contact:
         print("Supprimer un contact:")
         nom = input("Nom du contact à supprimer : ")
@@ -147,6 +192,6 @@ while True:
         if not trouve:
             print("Contact non trouvé !")
         # Quitter le programme:
-    elif choix == "5":
+    elif choix == "6":
         print("Au revoir !")
         break
