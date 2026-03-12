@@ -7,14 +7,17 @@
 contacts = []
 # Menu:
 while True:
-    print("Bienvenue dans votre carnet d'adresses !")
-    print("1. Afficher les contacts")
-    print("2. Rechercher un contact")
-    print("3. Ajouter un contact")
-    print("4. Modifier un contact")
-    print("5. Supprimer un contact")
-    print("6. Quitter le programme")
-    choix = input("Votre choix : ")
+    print("\n══════════════════════════════════════════")
+    print(" Bienvenue dans votre carnet d'adresses !  ")
+    print("══════════════════════════════════════════")
+    print("         1. Afficher les contacts         ")
+    print("         2. Rechercher un contact         ")
+    print("         3. Ajouter un contact            ")
+    print("         4. Modifier un contact           ")
+    print("         5. Supprimer un contact          ")
+    print("         6. Quitter le programme          ")
+    print("──────────────────────────────────────────")
+    choix = input("         Votre choix : ")
     if choix == "1":
         # Afficher les contacts:
         trouve = False
