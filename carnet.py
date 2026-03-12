@@ -1,5 +1,6 @@
 # Carnet d'adresses
 contacts = []
+contacts.sort()
 #groupes = ["Famille", "Ami", "Travail"]
 
 # Modèle contact
@@ -19,14 +20,15 @@ contacts = []
 # }
 # contacts.append(contact_infos)
 
-# Création du fichier de mémoire
+# Création du fichier de mémoire:
 
-# Ajouter un contact
+# Ajouter un contact:
 
-# Supprimer un contact
+# Supprimer un contact:
 
-# Afficher les contacts
+# Afficher les contacts:
+for contact in contacts:
+    print(contact["Nom"], contact["Prénom"])
 
-# Quitter le programme
-
-print(contacts)
+# Quitter le programme:
+print("Au revoir !")
