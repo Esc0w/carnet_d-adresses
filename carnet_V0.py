@@ -1,5 +1,7 @@
-# Carnet d'adresses
-#groupes = ["Famille", "Ami", "Travail"]
+# Débuté après avoir fini la première partie (P1) du cours gratuit de OpenClassRooms (Apprenez les bases du langage Python) : https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python
+# V2 prévue à la fin de la P2 du cours sur les fonctions.
+
+# Carnet d'adresses:
 
 # Création du fichier de mémoire:
 
