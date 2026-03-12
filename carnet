@@ -2,22 +2,31 @@
 contacts = []
 #groupes = ["Famille", "Ami", "Travail"]
 
-contact_infos = {
-    "id": 1, 
-    "Nom": "", 
-    "Prénom": "", 
-    "Téléphone": "", 
-    "@mail perso.": "", 
-    "@mail pro.": "", 
-    "Adresse": "", 
-    "Code postal": "", 
-    "Ville": "", 
-    "Pays": "", 
-    "Anniversaire": "", 
-    "Groupe": "", 
-}
-contacts.append(contact_infos)
+# Modèle contact
+# contact_infos = {
+#     "id": 1, 
+#     "Nom": "", 
+#     "Prénom": "", 
+#     "Téléphone": "", 
+#     "@mail perso.": "", 
+#     "@mail pro.": "", 
+#     "Adresse": "", 
+#     "Code postal": "", 
+#     "Ville": "", 
+#     "Pays": "", 
+#     "Anniversaire": "", 
+#     "Groupe": "", 
+# }
+# contacts.append(contact_infos)
 
+# Création du fichier de mémoire
 
+# Ajouter un contact
+
+# Supprimer un contact
+
+# Afficher les contacts
+
+# Quitter le programme
 
 print(contacts)
