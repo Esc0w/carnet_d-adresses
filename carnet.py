@@ -2,26 +2,6 @@
 contacts = []
 #groupes = ["Famille", "Ami", "Travail"]
 
-
-# Modèle contact
-# contact_infos = {
-#     "id": len(contacts) + 1, 
-#     "Nom": "", 
-#     "Prénom": "", 
-#     "Téléphone perso.": "", 
-#     "Téléphone pro.": "",
-#     "@mail perso.": "", 
-#     "@mail pro.": "", 
-#     "Adresse": "", 
-#     "Code postal": "", 
-#     "Ville": "", 
-#     "Pays": "", 
-#     "Anniversaire": "", 
-#     "Groupe": "", 
-# }
-# contacts.append(contact_infos)
-
-
 # Création du fichier de mémoire:
 
 
