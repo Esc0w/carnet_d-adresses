@@ -11,4 +11,4 @@ Mise en pratique de ce que j'apprends actuellement.
 Code sans découpage fonction
 
 # V1
-Code découper en fonction
+Code découper en "fonction()"
