@@ -9,6 +9,8 @@ while True:
     print("\n══════════════════════════════════════════")
     print(" Bienvenue dans votre carnet d'adresses !  ")
     print("══════════════════════════════════════════")
+    print("     Vous avez actuellement", len(contacts), "contact(s).")
+    print("         Que souhaitez-vous faire ?       ")
     print("         1. Afficher les contacts         ")
     print("         2. Rechercher un contact         ")
     print("         3. Ajouter un contact            ")
@@ -194,7 +196,7 @@ while True:
         if not trouve:
             print("Contact non trouvé !")
         # Quitter le programme:
-    elif choix == "Q":
+    elif choix == "Q" or choix == "q":
         print("Au revoir !")
         break
     else:
