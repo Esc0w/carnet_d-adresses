@@ -14,7 +14,7 @@ while True:
     print("         3. Ajouter un contact            ")
     print("         4. Modifier un contact           ")
     print("         5. Supprimer un contact          ")
-    print("         6. Quitter le programme          ")
+    print("         Q. Quitter le programme          ")
     print("──────────────────────────────────────────")
     choix = input("         Votre choix : ")
     if choix == "1":
@@ -194,6 +194,8 @@ while True:
         if not trouve:
             print("Contact non trouvé !")
         # Quitter le programme:
-    elif choix == "6":
+    elif choix == "Q":
         print("Au revoir !")
         break
+    else:
+        print("Choix invalide ! Veuillez réessayer.")
