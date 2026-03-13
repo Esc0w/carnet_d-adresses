@@ -1,6 +1,18 @@
 # Carnet d'adresses:
 
+
+
 # Création du fichier de mémoire:
+
+
+
+# Chargement des contacts depuis le fichier de mémoire:
+
+
+
+# Sauvegarde des contacts dans le fichier de mémoire:
+
+
 
 # Liste de contacts:
 contacts = []
