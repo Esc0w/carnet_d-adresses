@@ -29,9 +29,15 @@ while True:
             print("Aucun contact trouvé.")
         # Afficher les détails d'un contact:
         else:
-            contact_details = input("Quel contact souhaitez-vous afficher ? (Nom, Prénom) : ")
+            contact_details = input("Quel contact souhaitez-vous afficher ? (Nom Prénom) : ")
+            try:
+                nom = contact_details.split()[0]
+                prenom = contact_details.split()[1]
+            except IndexError:
+                print ("Format invalide ! Veuillez entrer : Nom Prénom")
+                continue
             for contact in contacts:
-                if contact["Nom"] == contact_details.split(",")[0].strip() and contact["Prénom"] == contact_details.split(",")[1].strip():
+                if contact["Nom"] == nom and contact["Prénom"] == prenom:
                     print("Nom :", contact["Nom"])
                     print("Prénom :", contact["Prénom"])
                     print("Téléphone perso. :", contact["Téléphone perso."])
@@ -72,6 +78,9 @@ while True:
         print("Ajouter un contact:")
         nom = input("Nom : ")
         prenom = input("Prénom : ")
+        if not nom or not prenom:
+            print("Veuillez entrer un nom et/ou un prénom valides pour ajouter le contact.")
+            continue
         telephone_perso = input("Téléphone perso. : ")
         telephone_pro = input("Téléphone pro. : ")
         mail_perso = input("@mail perso. : ")
@@ -124,11 +133,19 @@ while True:
                 print("14. Annuler")
                 choix_modification = input("Votre choix : ")
                 if choix_modification == "1":
-                    contact["Nom"] = input("Nouveau nom : ")
-                    print("Contact modifié !")
+                    nouveau_nom = input("Nouveau nom : ")
+                    if not nouveau_nom:
+                        print("Le nouveau nom ne peut être vide !")
+                    else: 
+                        contact["Nom"] = nouveau_nom
+                        print("Contact modifié !")
                 elif choix_modification == "2":
-                    contact["Prénom"] = input("Nouveau prénom : ")
-                    print("Contact modifié !")
+                    nouveau_prenom = input("Nouveau prénom : ")
+                    if not nouveau_prenom:
+                        print("Le nouveau prénom ne peut être vide !")
+                    else:
+                        contact["Prénom"] = nouveau_prenom
+                        print("Contact modifié !")
                 elif choix_modification == "3":
                     contact["Téléphone perso."] = input("Nouveau téléphone perso. : ")
                     print("Contact modifié !")
@@ -161,21 +178,28 @@ while True:
                     print("Contact modifié !")
                 elif choix_modification == "13":
                     # Modifier tous les champs:
-                    contact["Nom"] = input("Nouveau nom : ")
-                    contact["Prénom"] = input("Nouveau prénom : ")
-                    contact["Téléphone perso."] = input("Nouveau téléphone perso. : ")
-                    contact["Téléphone pro."] = input("Nouveau téléphone pro. : ")
-                    contact["@mail perso."] = input("Nouveau @mail perso. : ")
-                    contact["@mail pro."] = input("Nouveau @mail pro. : ")
-                    contact["Adresse"] = input("Nouvelle adresse : ")
-                    contact["Code postal"] = input("Nouveau code postal : ")
-                    contact["Ville"] = input("Nouvelle ville : ")
-                    contact["Pays"] = input("Nouveau pays : ")
-                    contact["Anniversaire"] = input("Nouvel anniversaire : ")
-                    contact["Groupe"] = input("Nouveau groupe : ")
-                    print("Contact modifié !")
+                    nouveau_nom = input("Nouveau nom : ")
+                    nouveau_prenom = input("Nouveau prénom : ")
+                    if not nouveau_nom or not nouveau_prenom:
+                        print("Le nouveau nom et prénom ne peuvent être vide, modification annulée !")
+                    else:
+                        contact["Nom"] = nouveau_nom
+                        contact["Prénom"] = nouveau_prenom
+                        contact["Téléphone perso."] = input("Nouveau téléphone perso. : ")
+                        contact["Téléphone pro."] = input("Nouveau téléphone pro. : ")
+                        contact["@mail perso."] = input("Nouveau @mail perso. : ")
+                        contact["@mail pro."] = input("Nouveau @mail pro. : ")
+                        contact["Adresse"] = input("Nouvelle adresse : ")
+                        contact["Code postal"] = input("Nouveau code postal : ")
+                        contact["Ville"] = input("Nouvelle ville : ")
+                        contact["Pays"] = input("Nouveau pays : ")
+                        contact["Anniversaire"] = input("Nouvel anniversaire : ")
+                        contact["Groupe"] = input("Nouveau groupe : ")
+                        print("Contact modifié !")
                 elif choix_modification == "14":
                     print("Modification annulée !")
+                else:
+                    print("Choix invalide !")
         if not trouve:
             print("Contact non trouvé !")
     elif choix == "5":
@@ -183,6 +207,9 @@ while True:
         print("Supprimer un contact:")
         nom = input("Nom du contact à supprimer : ")
         prenom = input("Prénom du contact à supprimer : ")
+        if not nom or not prenom:
+            print("Veuillez entrer un nom et/ou un prénom valides pour supprimer le contact.")
+            continue
         trouve = False
         for contact in contacts:
             if contact["Nom"] == nom and contact["Prénom"] == prenom:
@@ -193,10 +220,12 @@ while True:
                 elif validation.upper() == "O":
                     contacts.remove(contact)
                     print("Contact supprimé !")
+                else:
+                    print("Choix invalide, suppression annulée !")
         if not trouve:
             print("Contact non trouvé !")
         # Quitter le programme:
-    elif choix == "Q" or choix == "q":
+    elif choix.upper() == "Q":
         print("Au revoir !")
         break
     else:
