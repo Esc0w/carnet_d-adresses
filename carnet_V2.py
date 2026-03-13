@@ -275,11 +275,12 @@ def quitter_programme():
 # Affichage du menu et gestion des choix de l'utilisateur
 def menu():
     """Affiche le menu et traite les choix de l'utilisateur."""
+    contacts = charger_contacts()
     while True:
         print("\n══════════════════════════════════════════")
         print(" Bienvenue dans votre carnet d'adresses !  ")
         print("══════════════════════════════════════════")
-        print("     Vous avez actuellement", len(FICHIER), "contact(s).")
+        print("     Vous avez actuellement", len(contacts), "contact(s).")
         print("         Que souhaitez-vous faire ?       ")
         print("         1. Afficher les contacts         ")
         print("         2. Rechercher un contact         ")
@@ -290,17 +291,20 @@ def menu():
         print("──────────────────────────────────────────")
         choix = input("         Votre choix : ")
         if choix == "1":
-            afficher_contacts(FICHIER)
+            afficher_contacts(contacts)
         elif choix == "2":
-            rechercher_contact(FICHIER)
+            rechercher_contact(contacts)
         elif choix == "3":
-            ajouter_contact(FICHIER)
+            ajouter_contact(contacts)
         elif choix == "4":
-            modifier_contact(FICHIER)
+            modifier_contact(contacts)
         elif choix == "5":
-            supprimer_contact(FICHIER)
+            supprimer_contact(contacts)
         elif choix.upper() == "Q":
             quitter_programme()
         else:
             print("Choix invalide ! Veuillez réessayer.")
-###
+
+# 
+menu()
+### 
