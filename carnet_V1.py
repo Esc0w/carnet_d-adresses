@@ -1,5 +1,5 @@
 # Carnet d'adresses:
-
+import json
 
 
 # Création du fichier de mémoire:
@@ -7,15 +7,21 @@
 
 
 # Chargement des contacts depuis le fichier de mémoire:
+def charger_contacts():
+    try:
+        with open("contacts.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
 
-
+contacts = charger_contacts()
 
 # Sauvegarde des contacts dans le fichier de mémoire:
+def sauvegarder_contacts(contacts):
+    with open("contacts.json", "w") as f:
+        json.dump(contacts, f)
 
 
-
-# Liste de contacts:
-contacts = []
 # Menu:
 while True:
     print("\n══════════════════════════════════════════")
@@ -119,6 +125,8 @@ while True:
             "Groupe": groupe,
         }
         contacts.append(contact_infos)
+        sauvegarder_contacts(contacts)
+        print("Contact ajouté !")
     elif choix == "4":
         # Modifier un contact:
         print("Modifier un contact:")
@@ -151,6 +159,7 @@ while True:
                     else: 
                         contact["Nom"] = nouveau_nom
                         print("Contact modifié !")
+                        sauvegarder_contacts(contacts)
                 elif choix_modification == "2":
                     nouveau_prenom = input("Nouveau prénom : ")
                     if not nouveau_prenom:
@@ -158,36 +167,47 @@ while True:
                     else:
                         contact["Prénom"] = nouveau_prenom
                         print("Contact modifié !")
+                        sauvegarder_contacts(contacts)
                 elif choix_modification == "3":
                     contact["Téléphone perso."] = input("Nouveau téléphone perso. : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "4":
                     contact["Téléphone pro."] = input("Nouveau téléphone pro. : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "5":
                     contact["@mail perso."] = input("Nouveau @mail perso. : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "6":
                     contact["@mail pro."] = input("Nouveau @mail pro. : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "7":
                     contact["Adresse"] = input("Nouvelle adresse : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "8":
                     contact["Code postal"] = input("Nouveau code postal : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "9":
                     contact["Ville"] = input("Nouvelle ville : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "10":
                     contact["Pays"] = input("Nouveau pays : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "11":
                     contact["Anniversaire"] = input("Nouvel anniversaire : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "12":
                     contact["Groupe"] = input("Nouveau groupe : ")
                     print("Contact modifié !")
+                    sauvegarder_contacts(contacts)
                 elif choix_modification == "13":
                     # Modifier tous les champs:
                     nouveau_nom = input("Nouveau nom : ")
@@ -208,6 +228,7 @@ while True:
                         contact["Anniversaire"] = input("Nouvel anniversaire : ")
                         contact["Groupe"] = input("Nouveau groupe : ")
                         print("Contact modifié !")
+                        sauvegarder_contacts(contacts)
                 elif choix_modification == "14":
                     print("Modification annulée !")
                 else:
@@ -232,6 +253,7 @@ while True:
                 elif validation.upper() == "O":
                     contacts.remove(contact)
                     print("Contact supprimé !")
+                    sauvegarder_contacts(contacts)
                 else:
                     print("Choix invalide, suppression annulée !")
         if not trouve:
