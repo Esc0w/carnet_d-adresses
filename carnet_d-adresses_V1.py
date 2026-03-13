@@ -1,4 +1,6 @@
-# Carnet d'adresses:
+### carnet_d-adresses_V1.py by Escow ###
+
+# import
 import json
 
 
@@ -264,3 +266,4 @@ while True:
         break
     else:
         print("Choix invalide ! Veuillez réessayer.")
+### carnet_d-adresses_V1.py by Escow ###
