@@ -1,4 +1,4 @@
-# Carnet-d-adresses-(Work-in-progress)
+# carnet_d-adresses
 
 # FR
 Un carnet d'adresses simple qui permet d'afficher, ajouter, modifier et supprimer des contacts.
