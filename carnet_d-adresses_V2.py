@@ -1,4 +1,4 @@
-### carnet_d-adresses_V2.py by Escow ###
+### carnet_d-adresses_V2.py by Esc0w ###
 
 # import
 import json
@@ -309,4 +309,4 @@ def menu():
 
 # 
 menu()
-### carnet_d-adresses_V2.py by Escow ###
+### carnet_d-adresses_V2.py by Esc0w ###
